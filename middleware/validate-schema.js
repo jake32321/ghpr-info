@@ -3,7 +3,6 @@ const Boom = require('@hapi/boom');
 
 const validateReqBody = function (schema) {
     return function (req, res, next) {
-        console.log(req.body)
         const { error } = schema.validate(req.body);
         if (!error) {
             next();
