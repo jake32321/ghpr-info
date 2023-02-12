@@ -1,0 +1,78 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "GitHub PR API",
+        "description": "An API for ineracting with and fetching information about GitHub pull requests",
+        "version": "0.0.1"
+    },
+    "paths": {
+        "/pr/metadata": {
+            "post": {
+                "description": "Fetch metadata for a repository's open pull requests",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "repositoryURL": {
+                                        "type": "string",
+                                        "description": "GitHub repository URL"
+                                    }
+                                },
+                                "example": {
+                                    "repositoryURL": "https://github.com/pimoroni/inky"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "A JSON array of open PR metadata",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "type": "number",
+                                                "description": "Pull request ID"
+                                            },
+                                            "number": {
+                                                "type": "number",
+                                                "description": "Pull request number for the repository"
+                                            },
+                                            "title": {
+                                                "type": "string",
+                                                "description": "Pull request title"
+                                            },
+                                            "author": {
+                                                "type": "string",
+                                                "description": "Author of the pull request"
+                                            },
+                                            "commits": {
+                                                "type": "number",
+                                                "description": "Number of commits made on the pull request"
+                                            }
+                                        },
+                                        "example": {
+                                            "id": 1112010530,
+                                            "number": 152,
+                                            "title": "Search `/dev` directory for i2c interface",
+                                            "author": "georgeHall",
+                                            "commits": 2
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
