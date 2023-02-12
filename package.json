@@ -1,0 +1,30 @@
+{
+  "name": "ghpr-info",
+  "version": "0.0.1",
+  "description": "A quick demo API for requesting github pull request information",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon -L ./index.js",
+    "start": "node ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jake32321/ghpr-info.git"
+  },
+  "author": "Jacob Reed <jacob.reed2017@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jake32321/ghpr-info/issues"
+  },
+  "homepage": "https://github.com/jake32321/ghpr-info#readme",
+  "dependencies": {
+    "@hapi/boom": "^10.0.1",
+    "@hapi/joi": "^17.1.1",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
