@@ -52,6 +52,7 @@ factory._private.fetchCommitCount = async function(commitsURL) {
 factory._private.sanitizePRMetadata = async function (metadata) {
     const sanitizedData = [];
     for (const prMeta of metadata) {
+        console.log(factory._private.fetchCommitCount)
         let commitCount = await factory._private.fetchCommitCount(prMeta.commits_url);
 
         if (!commitCount) {
